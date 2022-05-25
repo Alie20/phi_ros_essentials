@@ -48,21 +48,26 @@ def rotate(angular_velocity,angle):
     angle_moved = 0
     angle = math.radians(angle)
     angular_velocity_publisher = rospy.Publisher("/turtle1/cmd_vel",Twist,queue_size=10)
-    rate = rospy.Rate(50)
+    rate = rospy.Rate(100)
     while (1):
         command_angular_velocity = Twist()
-        command_angular_velocity.angular.z = math.radians(angular_velocity)  
+        angular_velocity_rad = math.radians(angular_velocity)
+        command_angular_velocity.angular.z = angular_velocity_rad  
         angular_velocity_publisher.publish(command_angular_velocity)
         rate.sleep()
         angle_moved = abs(theta0-theta)
         rospy.loginfo(f"angle_moved:{angle_moved}\t angle_required:{angle}\n")
         if(angle_moved >= angle):
+            command_angular_velocity.angular.z = 0
+            angular_velocity_publisher.publish(command_angular_velocity)
             rospy.loginfo("########################################")
             rospy.loginfo("#                                      #")
             rospy.loginfo("#  Robot reached to the certain Angle  #")
             rospy.loginfo("#                                      #")
             rospy.loginfo("########################################")
             break
+    
+
 
 
 

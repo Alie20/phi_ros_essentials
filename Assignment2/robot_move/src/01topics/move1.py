@@ -37,13 +37,15 @@ def move(velocity,distance):
             rospy.loginfo("#                                          #")
             rospy.loginfo("############################################")
             break
+    command_velocity.linear.x = 0
+    velocity_publisher.publish(command_velocity)
 
 #define rotate function reach to angle with certain angular velocity
 def rotate(angular_velocity,angle_required):
     # define the angle_moved at first 
     angle_moved = 0
     #define frequency
-    rate = rospy.Rate(10)
+    rate = rospy.Rate(100)
     #intialize time at the first 
     t0 = time.time()
     #convert degree to radian
@@ -67,16 +69,17 @@ def rotate(angular_velocity,angle_required):
         rospy.loginfo(f"Angle_moved in rad:{angle_moved}\tAngle Required in rad :{angle_required_rad}\n")
         # if the robot reach to certain angle stop
         if(angle_moved >= angle_required_rad):
+            command_angular_velocity.angular.z = 0
+            angular_velocity_publisher.publish(command_angular_velocity)
             rospy.loginfo("########################################")
             rospy.loginfo("#                                      #")
             rospy.loginfo("#  Robot reached to the certain Angle  #")
             rospy.loginfo("#                                      #")
             rospy.loginfo("########################################")
             break
-    
 
 rospy.init_node("move",anonymous=True)
-move(1,2)
+move(1,4)
 rotate(30,90)
 
 
