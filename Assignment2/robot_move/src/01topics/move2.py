@@ -2,7 +2,6 @@
 
 # Import the required libraries 
 from cmath import sqrt
-import queue
 import rospy ,math 
 from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
@@ -66,19 +65,9 @@ def rotate(angular_velocity,angle):
             rospy.loginfo("#                                      #")
             rospy.loginfo("########################################")
             break
-    
-
-
-
-
-        
-    
-    
-
-
 
 rospy.init_node("move",anonymous=True)
 rospy.Subscriber('/turtle1/pose',Pose,pose_call_back)
-time.sleep(2)
+time.sleep(0.5)
 move(1,2)
 rotate(30,90)
