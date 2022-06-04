@@ -28,6 +28,9 @@
 
 ## (Assignment 2) [Create A robot to move a certain position then rotate a certain angle](https://github.com/Alie20/phi_ros_essentials/blob/main/Assignment2/Week%202%20-%20Assignment%20%20(3).pdf)
 ## [Assignment 2 Solution](https://github.com/Alie20/phi_ros_essentials/tree/main/Assignment2/robot_move)
+
+## (Assignment 3) [Create a client's node that send the radius and then create a server's node that calculate the area the sent back it again/Create client and server nodes to move the robot with certain velocity in certain time, After that the server send response that the status is true ,command mission completed succesfully,The distance that moved by robot](https://github.com/Alie20/phi_ros_essentials/blob/main/Assignment3/Week%203%20-%20Assignment%20%20(2).pdf)
+## [Assignment 3 Solution](https://github.com/Alie20/phi_ros_essentials/tree/main/Assignment3/robot_move) 
                
             
                
