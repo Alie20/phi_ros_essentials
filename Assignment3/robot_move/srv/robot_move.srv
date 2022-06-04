@@ -1,0 +1,6 @@
+geometry_msgs/Twist speed
+int16 duration
+---
+bool status
+string command
+float32 distance
