@@ -1,0 +1,19 @@
+<launch>
+    <group ns ="t1">
+        <node name="turtle" pkg="turtlesim" type="turtlesim_node"></node>
+        <node name="turtle_teleop_key" pkg="turtlesim" type="turtle_teleop_key" launch-prefix="xterm -e"></node>
+        <param name="turtle/background_r" value="255"></param>
+        <param name="turtle/background_b" value="0"></param>
+        <param name="turtle/background_g" value="0"></param>	
+    </group>
+
+    <group ns ="t2">
+        <node name="turtle2" pkg="turtlesim" type="turtlesim_node"></node>
+        <node name="turtle_teleop_key" pkg="turtlesim" type="turtle_teleop_key" launch-prefix="xterm -e"></node>
+
+    </group>
+</launch>
+
+
+
+        
